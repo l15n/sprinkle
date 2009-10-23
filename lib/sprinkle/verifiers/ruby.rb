@@ -12,7 +12,7 @@ module Sprinkle
         # Always include rubygems first
         files = files.unshift('rubygems').collect { |x| "require '#{x}'" }
         
-        @commands << "ruby -e \"#{files.join(';')}\""
+        @commands << "ruby -e \"#{files.join(';')}exit\""
       end
       
       # Checks if a gem exists by calling "sudo gem list" and grepping against it.
